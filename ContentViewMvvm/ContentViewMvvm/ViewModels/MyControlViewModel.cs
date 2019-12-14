@@ -11,24 +11,26 @@ namespace ContentViewMvvm.ViewModels
     public class MyControlViewModel : BindableBase, IDisposable
     {
         private CompositeDisposable Disposable { get; } = new CompositeDisposable();
-        public VtuberRandom Model { get; }
+
+        public VtuberRandom VtuberRandomModel = new VtuberRandom();
         public ReactiveProperty<string> Name { get; set; }
         public ReactiveCommand RundomCommand { get; private set; } = new ReactiveCommand();
 
-        public MyControlViewModel(VtuberRandom vtuberRandom)
+        public ReactiveProperty<int> CommandTriggerSeed { get; set; } = new ReactiveProperty<int>();
+
+        public MyControlViewModel()
         {
-            this.Model = vtuberRandom;
 
             //Modelとの接続
-            Name = Model.ObserveProperty(x => x.Name)                   //ModelのNameプロパティと接続します。
-                        .Where(x => x != null)                          //Name != null じゃないとなにもしません。
-                        .Select(x => x.Contains("九条") ? $"{x}様" : x) //Nameに"九条"が含まれる場合は様を付加。それ以外はそのまま
-                        .ToReactiveProperty<string>()                   //ViewModel←Modelの単方向接続です
-                        .AddTo(this.Disposable);                        //解放用に纏めておきます
+            Name = VtuberRandomModel.ObserveProperty(x => x.Name)                   //ModelのNameプロパティと接続します。
+                                    .Where(x => x != null)                          //Name != null じゃないとなにもしません。
+                                    .Select(x => x.Contains("九条") ? $"{x}様" : x) //Nameに"九条"が含まれる場合は様を付加。それ以外はそのまま
+                                    .ToReactiveProperty<string>()                   //ViewModel←Modelの単方向接続です
+                                    .AddTo(this.Disposable);                        //解放用に纏めておきます
 
             //Commandの実行
-            RundomCommand.Subscribe(_ => Model.RundomNameSet());
-
+            RundomCommand.Subscribe(_ => VtuberRandomModel.RundomNameSet());
+            CommandTriggerSeed.Subscribe(_ => VtuberRandomModel.RundomNameSet());
         }
         public void Dispose() => this.Disposable.Dispose();
     }

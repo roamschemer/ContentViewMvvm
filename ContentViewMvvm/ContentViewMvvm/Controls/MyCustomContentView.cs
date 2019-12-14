@@ -14,10 +14,28 @@ namespace ContentViewMvvm.Controls
                                         ((MyCustomContentView)bindable).NowName = newValue;
                                     },
                                     defaultBindingMode: BindingMode.TwoWay); //初期バインディング方向
+
+        public static readonly BindableProperty CommandTriggerProperty =
+            BindableProperty.Create(nameof(CommandTrigger),
+                                    typeof(int),
+                                    typeof(MyCustomContentView),
+                                    0,
+                                    propertyChanged: (bindable, oldValue, newValue) =>
+                                    {
+                                        ((MyCustomContentView)bindable).CommandTrigger = newValue;
+                                    },
+                                    defaultBindingMode: BindingMode.TwoWay);
+
         public object NowName
         {
             get => GetValue(NowNameProperty);
             set => SetValue(NowNameProperty, value);
+        }
+
+        public object CommandTrigger
+        {
+            get => GetValue(CommandTriggerProperty);
+            set => SetValue(CommandTriggerProperty, value);
         }
     }
 }

@@ -6,15 +6,19 @@
     xmlns:prism="http://prismlibrary.com"
     prism:ViewModelLocator.AutowireViewModel="True"
     x:Class="ContentViewMvvm.Views.MyControl"
-    NowName="{Binding Name.Value}">
+    NowName="{Binding Name.Value}"
+    x:Name="this"
+    >
     
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Label Text="{Binding Name.Value}" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
         <Button Text="VTuber抽選" Command="{Binding RundomCommand}" Grid.Row="1"/>
+        <Label BindingContext="{x:Reference Name=this}" Text="{Binding Path=CommandTrigger}" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
     </Grid>
 
 </controls:MyCustomContentView>
