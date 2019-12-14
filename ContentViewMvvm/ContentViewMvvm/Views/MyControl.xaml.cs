@@ -1,8 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using ContentViewMvvm.Controls;
 
 namespace ContentViewMvvm.Views
 {
-    public partial class MyControl : ContentView
+    public partial class MyControl : MyCustomContentView
     {
         public MyControl()
         {
