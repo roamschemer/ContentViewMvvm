@@ -24,9 +24,9 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <cont:MyControl x:Name="LeftTopControl" Grid.Row="0" Grid.Column="0" BackgroundColor="LightBlue" />
-            <cont:MyControl x:Name="RightTopControl" Grid.Row="0" Grid.Column="1" BackgroundColor="LightCyan"/>
-            <cont:MyControl x:Name="LeftUnderControl" Grid.Row="1" Grid.Column="0" BackgroundColor="LightSkyBlue"/>
-            <cont:MyControl x:Name="RightUnderControl" Grid.Row="1" Grid.Column="1" BackgroundColor="LightYellow"/>
+            <cont:MyControl x:Name="RightTopControl" Grid.Row="0" Grid.Column="1" BackgroundColor="LightCyan" />
+            <cont:MyControl x:Name="LeftUnderControl" Grid.Row="1" Grid.Column="0" BackgroundColor="LightSkyBlue" />
+            <cont:MyControl x:Name="RightUnderControl" Grid.Row="1" Grid.Column="1" BackgroundColor="LightYellow" />
         </Grid>
         <Label Text="------ ここから↓が親Page ------"/>
         <Grid>
@@ -39,10 +39,14 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label BindingContext="{x:Reference Name=LeftTopControl}" Text="{Binding Path=NowName}" BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="0" Grid.Column="0"/>
-            <Label BindingContext="{x:Reference Name=RightTopControl}" Text="{Binding Path=NowName}" BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="0" Grid.Column="1"/>
-            <Label BindingContext="{x:Reference Name=LeftUnderControl}" Text="{Binding Path=NowName}" BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="1" Grid.Column="0"/>
-            <Label BindingContext="{x:Reference Name=RightUnderControl}" Text="{Binding Path=NowName}" BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="1" Grid.Column="1"/>
+            <Label BindingContext="{x:Reference Name=LeftTopControl}" Text="{Binding Path=NowName}" 
+                   BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="0" Grid.Column="0" />
+            <Label BindingContext="{x:Reference Name=RightTopControl}" Text="{Binding Path=NowName}" 
+                   BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="0" Grid.Column="1" />
+            <Label BindingContext="{x:Reference Name=LeftUnderControl}" Text="{Binding Path=NowName}" 
+                   BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="1" Grid.Column="0" />
+            <Label BindingContext="{x:Reference Name=RightUnderControl}" Text="{Binding Path=NowName}" 
+                   BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="1" Grid.Column="1" />
             <Button Text="全部のボタンをPush！" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" />
         </Grid>
     </StackLayout>
