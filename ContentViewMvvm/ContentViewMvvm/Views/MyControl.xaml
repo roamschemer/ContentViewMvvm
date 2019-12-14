@@ -13,7 +13,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
-        <Label x:Name="NameLaben" Text="{Binding Name.Value}" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <Label Text="{Binding Name.Value}" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
         <Button Text="VTuber抽選" Command="{Binding RundomCommand}" Grid.Row="1"/>
     </Grid>
 

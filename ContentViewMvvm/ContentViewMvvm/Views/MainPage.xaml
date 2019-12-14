@@ -47,7 +47,6 @@
                    BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="1" Grid.Column="0" />
             <Label BindingContext="{x:Reference Name=RightUnderControl}" Text="{Binding Path=NowName}" 
                    BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="1" Grid.Column="1" />
-            <Button Text="全部のボタンをPush！" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" />
         </Grid>
     </StackLayout>
 </ContentPage>
