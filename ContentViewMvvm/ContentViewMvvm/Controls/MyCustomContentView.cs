@@ -11,7 +11,7 @@ namespace ContentViewMvvm.Controls
                                     string.Empty,    //初期値
                                     propertyChanged: (bindable, oldValue, newValue) => //変更があったことを感知するイベントハンドラ
                                     {
-                                        ((MyCustomContentView)bindable).NowName = newValue;
+                                        ((MyCustomContentView)bindable).NowName = (string)newValue;
                                     },
                                     defaultBindingMode: BindingMode.TwoWay); //初期バインディング方向
 
@@ -22,19 +22,33 @@ namespace ContentViewMvvm.Controls
                                     0,
                                     propertyChanged: (bindable, oldValue, newValue) =>
                                     {
-                                        ((MyCustomContentView)bindable).CommandTrigger = newValue;
+                                        ((MyCustomContentView)bindable).CommandTrigger = (int)newValue;
                                     },
                                     defaultBindingMode: BindingMode.TwoWay);
+        public static readonly BindableProperty ValueProperty =
+    BindableProperty.Create(nameof(Value), typeof(double), typeof(MyCustomContentView), 0.0,
+        propertyChanged: (bindable, oldValue, newValue) =>
+            ((MyCustomContentView)bindable).Value = (double)newValue,
+        defaultBindingMode: BindingMode.TwoWay
+    );
 
-        public object NowName
+        public double Value
         {
-            get => GetValue(NowNameProperty);
+            get { return (double)GetValue(ValueProperty); }
+            set
+            {
+                SetValue(ValueProperty, value);
+            }
+        }
+        public string NowName
+        {
+            get => (string)GetValue(NowNameProperty);
             set => SetValue(NowNameProperty, value);
         }
 
-        public object CommandTrigger
+        public int CommandTrigger
         {
-            get => GetValue(CommandTriggerProperty);
+            get => (int)GetValue(CommandTriggerProperty);
             set => SetValue(CommandTriggerProperty, value);
         }
     }
