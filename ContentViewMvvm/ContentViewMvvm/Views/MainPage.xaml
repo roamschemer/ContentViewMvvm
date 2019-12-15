@@ -49,6 +49,5 @@
                    BackgroundColor="{Binding Path=BackgroundColor}" Grid.Row="1" Grid.Column="1" />
             <Button Text="全部のボタンをPush！(動きません…)" Command="{Binding AllButtonCommand}" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" />
         </Grid>
-        <Label Text ="{Binding AllButtonTrigger.Value}"/>
     </StackLayout>
 </ContentPage>
