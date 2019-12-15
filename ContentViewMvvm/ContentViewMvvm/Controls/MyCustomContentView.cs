@@ -35,7 +35,7 @@ namespace ContentViewMvvm.Controls
         public object CommandTrigger
         {
             get => GetValue(CommandTriggerProperty);
-            set => SetValue(CommandTriggerProperty, value); //←ここに親から来てくれない
+            set => SetValue(CommandTriggerProperty, value); //←ここに親から来てくれないので子が操作不能
         }
     }
 }
