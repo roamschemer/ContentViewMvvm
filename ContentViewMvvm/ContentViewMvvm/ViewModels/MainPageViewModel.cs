@@ -17,13 +17,13 @@ namespace ContentViewMvvm.ViewModels
         private readonly SeedData SeedModel = new SeedData();
 
         private CompositeDisposable Disposable { get; } = new CompositeDisposable();
-        public ReactiveProperty<int> AllButtonTrigger { get; set; }
+        public ReactiveProperty<int> AllButtonTrigger { get; set; } //未達
         public ReactiveCommand AllButtonCommand { get; private set; } = new ReactiveCommand();
 
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            //Modelとの接続
+            //Modelとの接続(未達
             AllButtonTrigger = SeedModel.ObserveProperty(x => x.Seed)
                                         .ToReactiveProperty<int>()
                                         .AddTo(this.Disposable);

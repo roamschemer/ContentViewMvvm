@@ -25,21 +25,7 @@ namespace ContentViewMvvm.Controls
                                         ((MyCustomContentView)bindable).CommandTrigger = (int)newValue;
                                     },
                                     defaultBindingMode: BindingMode.TwoWay);
-        public static readonly BindableProperty ValueProperty =
-    BindableProperty.Create(nameof(Value), typeof(double), typeof(MyCustomContentView), 0.0,
-        propertyChanged: (bindable, oldValue, newValue) =>
-            ((MyCustomContentView)bindable).Value = (double)newValue,
-        defaultBindingMode: BindingMode.TwoWay
-    );
 
-        public double Value
-        {
-            get { return (double)GetValue(ValueProperty); }
-            set
-            {
-                SetValue(ValueProperty, value);
-            }
-        }
         public string NowName
         {
             get => (string)GetValue(NowNameProperty);
