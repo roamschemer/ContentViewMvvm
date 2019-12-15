@@ -23,7 +23,7 @@ namespace ContentViewMvvm.ViewModels
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            //Modelとの接続(未達
+            //Modelとの接続
             AllButtonTrigger = SeedModel.ObserveProperty(x => x.Seed)
                                         .ToReactiveProperty<int>()
                                         .AddTo(this.Disposable);

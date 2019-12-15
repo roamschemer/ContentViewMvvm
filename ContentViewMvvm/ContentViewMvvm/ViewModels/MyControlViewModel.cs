@@ -16,7 +16,7 @@ namespace ContentViewMvvm.ViewModels
         public ReactiveProperty<string> Name { get; set; }
         public ReactiveCommand RundomCommand { get; private set; } = new ReactiveCommand();
 
-        public ReactiveProperty<int> CommandTriggerSeed { get; set; } = new ReactiveProperty<int>();
+        //public ReactiveProperty<int> CommandTriggerSeed { get; set; } = new ReactiveProperty<int>();
 
         public MyControlViewModel()
         {
@@ -30,7 +30,9 @@ namespace ContentViewMvvm.ViewModels
 
             //Commandの実行
             RundomCommand.Subscribe(_ => VtuberRandomModel.RundomNameSet());
-            CommandTriggerSeed.Subscribe(_ => VtuberRandomModel.RundomNameSet());
+
+            //親からCommandTriggerSeedを変更させて発動させたが無理でした…
+            //CommandTriggerSeed.Subscribe(_ => VtuberRandomModel.RundomNameSet());
         }
         public void Dispose() => this.Disposable.Dispose();
     }

@@ -23,10 +23,10 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <cont:MyControl x:Name="LeftTopControl" Grid.Row="0" Grid.Column="0" BackgroundColor="LightBlue" CommandTrigger="{Binding AllButtonTrigger.Value, Mode=OneWay}" />
-            <cont:MyControl x:Name="RightTopControl" Grid.Row="0" Grid.Column="1" BackgroundColor="LightCyan" CommandTrigger="{Binding AllButtonTrigger.Value, Mode=TwoWay}"/>
-            <cont:MyControl x:Name="LeftUnderControl" Grid.Row="1" Grid.Column="0" BackgroundColor="LightSkyBlue" CommandTrigger="{Binding AllButtonTrigger.Value, Mode=OneWayToSource}"/>
-            <cont:MyControl x:Name="RightUnderControl" Grid.Row="1" Grid.Column="1" BackgroundColor="LightYellow" CommandTrigger="{Binding AllButtonTrigger.Value, Mode=OneTime}"/>
+            <cont:MyControl x:Name="LeftTopControl" Grid.Row="0" Grid.Column="0" BackgroundColor="LightBlue" CommandTrigger="{Binding AllButtonTrigger.Value}" />
+            <cont:MyControl x:Name="RightTopControl" Grid.Row="0" Grid.Column="1" BackgroundColor="LightCyan" CommandTrigger="{Binding AllButtonTrigger.Value}"/>
+            <cont:MyControl x:Name="LeftUnderControl" Grid.Row="1" Grid.Column="0" BackgroundColor="LightSkyBlue" CommandTrigger="{Binding AllButtonTrigger.Value}"/>
+            <cont:MyControl x:Name="RightUnderControl" Grid.Row="1" Grid.Column="1" BackgroundColor="LightYellow" CommandTrigger="{Binding AllButtonTrigger.Value}"/>
         </Grid>
         <Label Text="------ ここから↓が親Page ------"/>
         <Grid>
